@@ -89,7 +89,53 @@ public class ch03 {
 			System.out.println(c);//5.0
 			System.out.println(d);//104
 		*/
-		//
+		//pb03 ) 출력결과 적기
+		/*
+			int a = 1;
+			int b = 2;
+			int c = 3;
+			a += b++ +c;//a= 6 b = 3
+			b += ++b + c; // 3 += 7 = 10
+			c += c++ + ++c;//11
+			System.out.println(a);
+			System.out.println(b);
+			System.out.println(c);
+		*/
+		//pb 04 ) 출력 결과 적기
+		/*
+			int a = 1;
+			System.out.println(a++);//1
+			System.out.println(a + (++a));//5
+			System.out.println(a++ + ++a * a);//28 ?? 왜 그런지 모름 3 + 5 * 5
+		*/
+		//pb 05) 출력 결과 같게 빈칸 채우기 //14
+		/*
+			int a = 1;
+			//System.out.println(A + B);
+			System.out.println((++a * ++a) + (++a + a));//((2 * 3) + (4 + 4))
+		*/
+		//pb 06) 변수 a, b,c선언 후 출력문 적기
+		/*
+			int a = 1;
+			int b = 3;
+			int c = 5;
+			System.out.println(a-a);//0
+			System.out.println(a * b % c);//3
+			System.out.println(++a * a + b);//7
+			System.out.println(a++ * ++a);//8
+			System.out.println(a * b++ - b);//8 a = 4 ,b = 4 
+			System.out.println(--c - c  * ++c);//-16, c=5
+			System.out.println(a * (++a * 5 % (c++)));//0 ,a=5 c= 6
+			System.out.println((a++) + ++a * a);// 5 + 7 * 7 // 54 
+		*/
+		//pb 07) 출력 결과
+		int a = 1; 
+		int b = 2;
+		a += b +=3;//a = 6, b=5
+		System.out.printf("%d %d \n",a,b);
+		
+		a *= a++ - (a++)  * b;//6 * 6 - 7 * 5
+		System.out.println(a+b);//-174+5
 	}
 
 }
