@@ -32,10 +32,20 @@ public class ch04 {
 			System.out.printf("%d\n",(int)x);
 			System.out.printf("%d",(int)y);
 		*/
-		//pb02 ) x ='a', y ='b', z = 'c' ,w
-		char x ='a';//97
-		char y ='b';//98
-		char z ='c';//99
-	
+		//pb02 ) x ='a', y ='b', z = 'c' ,w = 294 아스키 출력
+		/*
+			char x ='a';//97
+			char y ='b';//98
+			char z ='c';//99
+			char w = (char)(x+y+z);
+			System.out.printf("%s %d\n",w,(int)w);
+		*/
+		//pb03) 출력 결과 적기
+		/*
+			char x = 'a';
+			System.out.println((int)x);//97
+			System.out.println(x++);//a
+			System.out.println(++x);//c
+		*/
 	}
 }
