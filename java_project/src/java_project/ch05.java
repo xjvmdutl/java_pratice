@@ -1,5 +1,7 @@
 package java_project;
 
+import java.util.Scanner;
+
 public class ch05 {
 
 	public static void main(String[] args) {
@@ -109,12 +111,87 @@ public class ch05 {
 									   "H"
 			 						 */
 		//pb06) 빈칸 채우기
+		/*
 			String name = "Ronaldo";
 			String nation = "Portugal";
 			int age = 33;
 			int height = 185;
 			System.out.printf("My name is %s, and I\'M from %s\n",name,nation);
 			System.out.printf("I\'M %d years old and %d cm tall",age,height);
+		*/
+		//pb07) 출력화면 만들기
+		/*
+			String name1 = "Billy";
+			String name2 = "Juno";
+			String status1 = "tall";
+			String status2 = "smart";
+			
+			System.out.println(name1 + " is " + status1);
+			System.out.println(name2 + " is " + status2);
+		*/
+		//pb08) 출력 결과
+		/*
+			String text_1 = "가나\n다라\n마바사\t아";
+			String text_2 = "자차카";
+			String text_3 = "타\n파하";
+			
+			System.out.println(text_1);//가나
+									   //다라
+									   //마바사	아
+			System.out.println(text_2);//자차카
+			System.out.print(text_3);//타
+									 //파하
+		*/
+		//pb09) 하나의 출력문으로 다음 내용을 출력하는 출력문
+		/*
+			System.out.println("국가 : 대한민국\n"
+					+"수도 : 서울\n"
+					+"언어 : 한국어\n"
+					+"인구 : 51,779,148명");
+		*/
+		//pb10) 빈칸 채우기
+		/*
+			String mystr = "ORANGE";
+			
+			System.out.println(mystr.charAt(0));//O
+			System.out.println(mystr.charAt(4));//G
+			System.out.println(mystr.charAt(3));//N
+			System.out.println(mystr.charAt(0));//O
+		*/
+		//pb11) 빈칸 채우기
+		/*
+			String mystr = "SOLUTION";
+			System.out.println(mystr.substring(1,4));//OLU
+			System.out.println(mystr.substring(0,5));//SOLUT
+		*/
+		//pb12) c:\'aa\"abc.txt출력
+		//System.out.println("c:\\\'aa\\\"abc.txt");
+		//pb13) num1, num2 에 문자열 특정구간 시작 끝값을 입려받아 해당 부분 출력
+		/*
+			Scanner sc = new Scanner(System.in);	
+			System.out.print("num1 ? ");
+			int num1 = sc.nextInt();
+			System.out.print("num2 ? ");
+			int num2 = sc.nextInt();
+			
+			System.out.print("문자열 입력 : ");
+			String str = sc.next();
+			
+			System.out.println(str.substring(num1-1,num2));
+		*/
+		//pb14) 애국가 1절의 글자수(띄어스기 미포함)를 출력하는 프로그램
+		/*
+			String str = "동해물과 백두산이 마르고 닳도록\n 하느님이 보우하사 우리 나라만세\n 무궁화 삼천리 화려강산\n 대한사람 대한으로 길이 보전하세";
+			System.out.println(str.replace(" ", ""));
+		*/
+		//pb15) Sentence라는 변수에 I'm from Korea, but I don't like Kimchi 저장
+		//		문자열 함수를 이용하여 4줄넘지 않게 작성
+		/*
+			String sentence = "I\'m from Korea, but I don\'t like Kimchi" ;
+			System.out.println(sentence.toUpperCase());
+			System.out.println(sentence.toLowerCase());
+			System.out.println(sentence.replace(" " , ""));
+		*/
 		}
 
 }
