@@ -49,11 +49,74 @@ public class ch06 {
 		 * ;//1101,0011/1010/1011 ,1653
 		 */
 		//pb03) 출력결과 적기
-		int a = 31;
-		int b = 19;
-		System.out.printf("%s %s \n",Integer.toBinaryString(b));
+		/*
+		 * int a = 31; int b = 19;
+		 * System.out.printf("%s %s \n",Integer.toBinaryString(a&b),Integer.
+		 * toBinaryString(a|b));//10011,11111
+		 * System.out.printf("%s %s \n",Integer.toBinaryString(a+b),Integer.
+		 * toBinaryString(a-b));//110010,1100
+		 */
+		//pb04) a=11,b=22,c=33 1011,16,41,1000010출력
+		/*
+		 * int a = 11;//1011 int b = 22;//10110 int c = 33;//100001
+		 * System.out.println(Integer.toBinaryString(a));
+		 * System.out.println(Integer.toHexString(b));
+		 * System.out.println(Integer.toHexString(c));
+		 * System.out.println(Integer.toBinaryString(a+b+c));//c<<1
+		 */
+		//pb05) 출력결과 적기
+		/*
+		 * int a = -123;//11111111111111111111111110000101 //음수 10진수 2진수 표현 = 8비트로 만든 후,
+		 * (01111011) , 첫부호를 1로 세팅(11111011), 0->1 1->0 변환(부호비트유지)= 10000100 , +1을 해준다
+		 * 10000101
+		 * System.out.printf("%s %s",Integer.toBinaryString(~a),~a);//1111010,122
+		 */
+		//pb06) 출력결과 적기 
+		/*
+		 * int a = 82;//1010010 int b = 98;//1100010
+		 * System.out.printf("%s %d \n",Integer.toBinaryString(a&b),a&b);//1000010 66
+		 * System.out.printf("%s %d \n",Integer.toBinaryString(a^b),a^b);//110000 48
+		 * System.out.printf("%s %d \n",Integer.toBinaryString(a|b),a|b);//1110010 114
+		 * System.out.printf("%s %d \n",Integer.toBinaryString(a+b>>2),a+b>>2);//101101
+		 * 45
+		 */
+		//pb08)빈칸 채우기
+		/*
+			int a = 5;//101
+			int b = 8;//1000
+			int c = 2;//10
+			int num1 = a & b;
+			int num2 = a | b;
+			int num3 = a | c;
+			int num4 = a & b | c;
+			System.out.printf("%d %d %d %d",num1,num2,num3,num4);//0 13 7 2
+		*/
+		//pb09) 음의 정수  num -> 양의 정수 값으로 바꿔서 출력하는 프로그램
+		/*
+			int num =-3;//num은 음의 정수
+			String binaryNum = Integer.toBinaryString(num);
+			System.out.println(binaryNum);
+			binaryNum = Integer.toBinaryString(--num);
+			System.out.println(binaryNum);
+			binaryNum = Integer.toBinaryString(~num);
+			System.out.println(binaryNum);
+			num = Integer.parseInt(binaryNum,2);
+			System.out.println(num);//3출력
+		*/
+		//pb10) 자연수 num .을 두배로 계산해서 출력해주는 프로그램 단, 비트연산자 사용
+		/*
+			int num = 8;
+			System.out.println(Integer.toBinaryString(num));
+			num = num << 1;
+			System.out.println(Integer.toBinaryString(num));
+			System.out.println(num);
+		*/
+		//pb11) 2의 거듭제곱 표현하기 단,비트연산자만 활용해서 2^1~2^7까지
+		int num = 1;
+		for(int i=1; i<=7; ++i) {
+			System.out.println(num << i);
+		}
 		
-	
 	}
 }
 

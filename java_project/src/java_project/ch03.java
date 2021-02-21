@@ -64,6 +64,7 @@ public class ch03 {
 			System.out.println(a);//3
 			System.out.println(b);//5
 			System.out.println(c);//5
+			
 		*/
 		//pb02) 3   5   11 Ãâ·Â
 		/*
