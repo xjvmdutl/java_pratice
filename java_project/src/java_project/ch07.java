@@ -121,7 +121,6 @@ public class ch07 {
 		 * int num = 23; System.out.printf("이 변수 %d는 2또는 3의 배수인가?: %s\n", num, num % 2
 		 * == 0 || num % 3 == 0);
 		 */
-		
 	}
 
 }
