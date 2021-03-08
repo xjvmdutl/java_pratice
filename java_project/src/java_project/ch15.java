@@ -240,7 +240,20 @@ public class ch15 {
 			}
 			System.out.println(count);
 		*/
-		//pb12) 1~3 까지 
+		//pb12) 1~3 까지 숫자를 중복하여 사용하여 만든 세자리 수들을 가장 작은 수부터 순서대로 나열했을떄 10쨰에 오는 수를 구하시오
+		/*
+			int count = 0;
+			for(int i=1;i<=3;++i) {
+				for(int j=1;j<=3;++j) {
+					for(int k=1;k<=3;++k) {
+						count++;
+						if(count==10) {
+							System.out.println(100*i+10*j+k);
+						}
+					}
+				}
+			}
+		*/
 	}
 
 }
