@@ -133,31 +133,48 @@ public class ch16 {
 			System.out.println(sum);
 		*/
 		//pb12) 0~9까지 숫자가 모두 한번만 쓰였는지 확인
+		/*
+			Scanner sc = new Scanner(System.in);
+			System.out.print("Enter the number : ");
+			Long num = sc.nextLong();
+			
+			System.out.println(Func(num));
+		*/
+		//pb13) 정수 n울 입력받았을때 1~n까지의 정수에 나오는 1의 총 갯수를 구하기
+		/*
+			Scanner sc = new Scanner(System.in);
+			System.out.print("Enter the number : ");
+			int num = sc.nextInt();
+			int count = Func(num);
+			System.out.println(count);
+		*/
+		//pb14) 숫자를 입력하면 셀프 넘버인지 판별
+		//      양의 정수 n에 대하여 d(n)을 n과 n의 각 자릿수를 더하는 함수라고 정의 했을때 ex)d(75) = 75+7+5
+		/*
+			Scanner sc = new Scanner(System.in);
+			System.out.print("Enter the number : ");
+			int num = sc.nextInt();
+			boolean isMake = isFunc(num);
+			System.out.println(isMake);
+		*/
+		//pb15) 임의의 자연수는 그보다 작은 제곱수들의 합으로 표현 가능하다.
+		//fun_double(n)은 자연수 n이 주어질때 그표현들중 최소 갯수들중하나를 출력
+		/*
+			Scanner sc = new Scanner(System.in);
+			System.out.print("Enter the number : ");
+			int num = sc.nextInt();
+			fun_Double(num);
+		*/
+		//pb16) 모든 분수는 유한소수나 순환마디를 갖는 무한소수로 표현된다.
+		// 예를 들어 1/8은 0.125 의 유한소수 , 1/7 = 142857이 순환하는 무한소수
+		//1~100까지 N에 대하여 fun_recurring(n)은 1/n의 순환마디를 구하는 함수입니다.
+		//만약 1/n이 유한소수면 0리턴 ,  무한소수이면 순환마디를 리턴
 		Scanner sc = new Scanner(System.in);
 		System.out.print("Enter the number : ");
-		Long num = sc.nextLong();
-		
-		System.out.println(Func(num));
+		int num = sc.nextInt();
+		System.out.println(fun_recurring(num));
 	}
-	public static boolean Func(long num) {
-		for(int i=0;i<=9;++i) {
-			boolean is_bth = false;
-			int count= 0;
-			long n = 1;
-			while(num > n) {
-				int bit_num =(int)(num/n%10);
-				if(bit_num == i) {
-					is_bth =true;
-					count++;
-				}
-				n*=10;
-			}
-			if(!is_bth || count >1) {
-				return false;
-			}
-		}
-		return true;
-	}
+	
 	
 	/* ex01
 	public static int sum(int a, int b) {
@@ -324,4 +341,102 @@ public class ch16 {
 		}
 	}
 	*/
+	/*	pb12
+	public static boolean Func(long num) {
+		for(int i=0;i<=9;++i) {
+			boolean is_bth = false;
+			int count= 0;
+			long n = 1;
+			while(num > n) {
+				int bit_num =(int)(num/n%10);
+				if(bit_num == i) {
+					is_bth =true;
+					count++;
+				}
+				n*=10;
+			}
+			if(!is_bth || count >1) {
+				return false;
+			}
+		}
+		return true;
+	}
+	*/
+	/* pb13
+	public static int Func(int num) {
+		int count = 0;
+		for(int n=1;n <= num; ++n) {
+			int tmp = n;
+			while(tmp>0) {
+				if(tmp%10 == 1) {
+					count++;
+				}
+				tmp/=10;
+			}
+		}
+		return count;
+	}
+	*/
+	/* pb14
+	public static boolean isFunc(int num) {
+		for(int i=1;i<num;++i) {
+			int selfNum = i;
+			while(selfNum <= num) {
+				int tmp =selfNum;
+				
+				while(tmp>0) {
+					selfNum += tmp%10;
+					tmp/=10;
+				}
+				if(selfNum == num) {
+					return false;
+				}
+			}
+		}
+		return true;
+	}
+	*/
+	/* pb15
+	public static void fun_Double(int num) {
+		int sum = 0;
+		int i =1;
+		System.out.print("N = "+num+" >> [");
+		String str = "";
+		while(sum < num) {
+			if(i*i<num) {
+				i++;
+				continue;
+			}
+			for(int j=i-1;j>=1;--j) {
+				sum += j*j;
+				if(sum > num) {
+					sum -= j*j;
+				}else {
+					str += j+",";
+					j++;
+				}
+			}
+			
+		}
+		System.out.println(str.substring(0,str.length()-1)+"]");
+	}
+	*/
+	/*pb16*/
+	public static String fun_recurring(int num) {
+		String result = new String();
+		result = Double.toString(1/(double)num);
+		result = result.substring(2);
+		if(result.length()<8) {
+			return "0";
+		}
+		String temp = "";
+		for(int i=0;i<result.length();++i) {
+			temp = temp + result.substring(i,i+1);//한자리씩 더한다.
+			int tL = temp.length();
+			if(temp.equals(result.substring(tL,2*tL))) {
+				return temp;
+			}
+		}
+		return "0";
+	}
 }
