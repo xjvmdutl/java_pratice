@@ -1,5 +1,6 @@
 package java_project;
 
+import java.util.ArrayList;
 import java.util.Random;
 import java.util.Scanner;
 
@@ -118,16 +119,47 @@ public class ch17 {
 		//		어느 식당에 손님이 한시간에 20명 온다면 손님들이 도착하는 시간의 간격은 평균이 1/20시간 즉 5분인 지수분포를 따른다(-log u/n)
 		//		t =0을 기준으로 u=1/20인 지수분포로 발생한 다섯개의 도착간격 난수가 4.7 1.5 7.8 5.2 6.1 이라면 고객이 4.7 6.2 14.0 19.2 25.3도착했음을 의미
 		//		지수 분포를 입력받고 지수분포에 따르는 도착간격 10개 발생시킨후 시간 0 기준으로 고객이 도착한 시각을 구하는 프로그램 작성
+		/*
+			Random rd = new Random();
+			Scanner sc = new Scanner(System.in);
+			System.out.print("Enter the lambda : ");
+			double lambda = sc.nextDouble();
+			for(int i=0;i<10;++i) {
+				double d = rd.nextDouble();
+				System.out.println(-Math.log(d)/lambda);
+			}
+		*/
+		//pb08) 가계 도착하는 손님을 시간 간격 = 1/20 , 버거 만드는 속도 평균 3분 , 한시간 동안 손님들의 총 기다린 시간을 구하는 시뮬레이션 프로그램 작성
 		Random rd = new Random();
-		Scanner sc = new Scanner(System.in);
-		System.out.print("Enter the lambda : ");
-		double lambda = sc.nextDouble();
-		for(int i=0;i<10;++i) {
-			double d = rd.nextDouble();
-			System.out.println(-Math.log(d)/lambda);
+		double lamda = 1/20;
+		double time = 0;
+		double wating = 0;
+		ArrayList<Double> arr = new ArrayList<Double>();
+		ArrayList<Double> lev = new ArrayList<Double>();
+		time = time +exp_randnum(lamda);
+		while(time<=3600.0) {
+			arr.add(time);
+			lev.add(time +rd.nextDouble()*2+2);
+			if(lev.get(lev.size()-1)>3600) {
+				break;
+			}
+			time = time +exp_randnum(lamda);
 		}
+		for(int i=0;i<arr.size();++i) {
+			Double max_lev=0.0;
+			for(int j = 0 ;j<i;++j) {
+				if(arr.get(i)<lev.get(j)) {
+					max_lev=lev.get(j);
+				}
+			}
+			wating += max_lev -arr.get(i);
+		}
+		System.out.println(wating);
 	} 
-	
+	public static double exp_randnum(double lamda) {
+		Random rd = new Random();
+		return (-Math.log(rd.nextDouble())/lamda);
+	}
 	/* pb03
 	public static int oddNum() {
 		Random r = new Random();
